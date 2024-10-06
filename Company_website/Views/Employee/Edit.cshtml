@@ -1,0 +1,58 @@
+﻿
+@model Company_website.Models.Entities.Employee 
+@{
+  SelectList listItems = new SelectList(ViewBag.Company,"Id","Name");
+}
+<h1>Edit Employee</h1>
+<form class="m-3" method="post" asp-controller="Employee" asp-action="Edit" ,asp-route-id= "@Model.Id">
+  <div class="form-group mb-3">
+    <label asp-for="Name">Employee Name</label>
+    <input asp-for="Name" class="form-control" >
+    <span asp-validation-for="Name" class="text-danger"></span>
+
+  </div>
+  <div class="form-group mb-3">
+    <label asp-for="Age">Employee Age</label>
+    <input asp-for="Age" class="form-control">
+    <span asp-validation-for="Age" class="text-danger"></span>
+
+  </div>
+  <div class="form-group mb-3">
+    <label asp-for="Address">Employee Address</label>
+    <input asp-for="Address" class="form-control">
+    <span asp-validation-for="Address" class="text-danger"></span>
+  </div>
+  <div class="form-group mb-3">
+    <label asp-for ="EmailAddress">Employee EmailAddress</label>
+    <input asp-for ="EmailAddress" class="form-control">
+    <span asp-validation-for="EmailAddress" class="text-danger"></span>
+  </div>
+  <div class="form-group mb-3">
+    <label asp-for="Phone">Employee Phone</label>
+    <input asp-for="Phone" class="form-control">
+    <span asp-validation-for="Phone" class="text-danger"></span>
+  </div>
+  <div class="form-group mb-3">
+    <label asp-for="Salary">Employee Salary</label>
+    <input asp-for="Salary" class="form-control">
+    <span asp-validation-for="Salary" class="text-danger"></span>
+  </div>
+   <div class="form-group mb-3">
+    <label asp-for="Image">Employee Image</label>
+    <input asp-for="Image" class="form-control" >
+   <span asp-validation-for="Image" class="text-danger"></span>
+
+  </div>
+  <div class="form-group mb-3">
+    <label asp-for="CompanyId">Employee CompanyId</label>
+    <select asp-for="CompanyId" asp-items="listItems" class="form-select">
+            </select>
+
+  </div>
+  <button type="submit" value="Edit" class="btn btn-primary mt-3">Submit</button>
+</form>
+@section Scripts {
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+}

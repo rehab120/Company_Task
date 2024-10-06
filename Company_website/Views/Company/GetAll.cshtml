@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Company>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Address</th>
+      <th scope="col">Type</th>
+      <th scope="col">DataStart</th>
+      <th scope="col">Number of Employees</th>
+       <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach(var i in Model)
+    {
+      <tr data-id="@i.Id">
+        <th scope="row">@i.Id</th> 
+        <td>@i.Name</td>
+        <td>@i.Address</td>
+        <td>@i.Type</td>
+        <td>@i.DataStart.ToString("yyyy-MM-dd")</td>
+        <td>@i.employees.Count()</td> 
+        <td><a href ="/Company/GetById/@i.Id"  class="btn btn-link">Details</a></td>
+        <td><a href ="/Company/Delete/@i.Id"  class="btn btn-link" data-id="@i.Id">Delete</a></td>
+      </tr>
+    }
+  </tbody>
+</table>
+<div class="d-flex justify-content-end">
+   <a href="/Company/Create"><button type="button" class="btn btn-secondary">Add New Company</button></a> 
+</div>

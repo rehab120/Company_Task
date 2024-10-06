@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Company
+<h1>Create New Company</h1>
+<form class="m-3" method="post" action="SaveCreate" >
+  <div class="form-group mb-3">
+    <label asp-for="Name">Company Name</label>
+    <input asp-for="Name" class="form-control" >
+    <span asp-validation-for="Name" class="text-danger"></span>
+
+  </div>
+<div class="form-group mb-3">
+    <label asp-for="Type">Company Type</label>
+    <input asp-for="Type" class="form-control">
+    <span asp-validation-for="Type" class="text-danger"></span>
+
+  </div>
+  <div class="form-group mb-3">
+    <label asp-for="DataStart">Company DataStart</label>
+    <input asp-for="DataStart" class="form-control">
+    <span asp-validation-for="DataStart" class="text-danger"></span>
+
+  </div>
+  <div class="form-group mb-3">
+    <label asp-for="Address">Company Address</label>
+    <input asp-for="Address" class="form-control">
+    <span asp-validation-for="Address" class="text-danger"></span>
+
+  </div>
+  <button type="submit" value="Create" class="btn btn-primary mt-3">Submit</button>
+</form>
+@section Scripts {
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
